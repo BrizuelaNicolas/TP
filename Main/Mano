@@ -45,6 +45,13 @@ public class Mano {
 		resultados[Forma.LAGARTO][Forma.TIJERA] = Resultado.PIERDE;
 		resultados[Forma.LAGARTO][Forma.LAGARTO] = Resultado.EMPATA;
 		resultados[Forma.LAGARTO][Forma.SPOCK] = Resultado.GANA;
+		
+		/** Caso de jugadorUno usando forma SPOCK */
+		resultados[Forma.SPOCK][Forma.PIEDRA] = Resultado.GANA;
+		resultados[Forma.SPOCK][Forma.PAPEL] = Resultado.PIERDE;
+		resultados[Forma.SPOCK][Forma.TIJERA] = Resultado.GANA;
+		resultados[Forma.SPOCK][Forma.LAGARTO] = Resultado.PIERDE;
+		resultados[Forma.SPOCK][Forma.SPOCK] = Resultado.EMPATA;
 	}
 
 	/**
