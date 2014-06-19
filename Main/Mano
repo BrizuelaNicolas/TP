@@ -10,8 +10,41 @@ public class Mano {
 	 * la que determine su condición en el juego.
 	 * @param forma, la Forma que adopta la Mano.
 	 */
+	 
+	Private Forma forma;
+	private final Resultado[][] resultados = new Resultado[5][5];
+	
+	
 	public Mano(final Forma forma) {
-		throw new RuntimeException("No implementado aún");
+		this.forma = forma;
+		
+		/** Caso de jugadorUno usando forma PIEDRA */
+		resultados[Forma.PIEDRA][Forma.PIEDRA] = Resultado.EMPATA;
+		resultados[Forma.PIEDRA][Forma.PAPEL] = Resultado.PIERDE;
+		resultados[Forma.PIEDRA][Forma.TIJERA] = Resultado.GANA;
+		resultados[Forma.PIEDRA][Forma.LAGARTO] = Resultado.GANA;
+		resultados[Forma.PIEDRA][Forma.SPOCK] = Resultado.PIERDE;
+		
+		/** Caso de jugadorUno usando forma PAPEL */
+		resultados[Forma.PAPEL][Forma.PIEDRA] = Resultado.GANA;
+		resultados[Forma.PAPEL][Forma.PAPEL] = Resultado.EMPATA;
+		resultados[Forma.PAPEL][Forma.TIJERA] = Resultado.PIERDE;
+		resultados[Forma.PAPEL][Forma.LAGARTO] = Resultado.PIERDE;
+		resultados[Forma.PAPEL][Forma.SPOCK] = Resultado.GANA;
+		
+		/** Caso de jugadorUno usando forma TIJERA */
+		resultados[Forma.TIJERA][Forma.PIEDRA] = Resultado.PIERDE;
+		resultados[Forma.TIJERA][Forma.PAPEL] = Resultado.GANA;
+		resultados[Forma.TIJERA][Forma.TIJERA] = Resultado.EMPATA;
+		resultados[Forma.TIJERA][Forma.LAGARTO] = Resultado.GANA;
+		resultados[Forma.TIJERA][Forma.SPOCK] = Resultado.PIERDE;
+		
+		/** Caso de jugadorUno usando forma LAGARTO */
+		resultados[Forma.LAGARTO][Forma.PIEDRA] = Resultado.PIERDE;
+		resultados[Forma.LAGARTO][Forma.PAPEL] = Resultado.GANA;
+		resultados[Forma.LAGARTO][Forma.TIJERA] = Resultado.PIERDE;
+		resultados[Forma.LAGARTO][Forma.LAGARTO] = Resultado.EMPATA;
+		resultados[Forma.LAGARTO][Forma.SPOCK] = Resultado.GANA;
 	}
 
 	/**
